@@ -1,0 +1,2 @@
+# useful aliases
+alias ls="ls -G $*"
