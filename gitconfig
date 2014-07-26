@@ -1,0 +1,13 @@
+[push]
+	default = simple
+
+[user]
+	email = mizhi@cognius.com
+	name = Mitchell Peabody
+
+[alias]
+	dfw = diff --ignore-space-change
+
+[filter "media"]
+	clean = git-media-clean %f
+	smudge = git-media-smudge %f
