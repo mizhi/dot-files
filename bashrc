@@ -1,27 +1,29 @@
+umask 002
+
+export CLICOLOR=1
 export TERM=xterm-256color
 
 # pick the best installed editor
-editor_prefs=(emacs vim vi nano pico ed)
-for ed in "${editor_prefs[@]}"; do
+EDITOR_PREFS=(emacs vim vi nano pico ed)
+for ed in "${EDITOR_PREFS[@]}"; do
     which $ed > /dev/null 2>&1 && export EDITOR=$(which $ed) && break
 done
 export VISUAL=$EDITOR
-
+export HGEDITOR="/usr/bin/vim"
 
 # shell prompt stuff
-force_color_prompt=yes
+FORCE_COLOR_PROMPT=yes
 
-if [ -n "$force_color_prompt" ]; then
+if [ -n "$FORCE_COLOR_PROMPT" ]; then
     if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
         # We have color support; assume it's compliant with Ecma-48
         # (ISO/IEC-6429). (Lack of such support is extremely rare, and such
         # a case would tend to support setf rather than setaf.)
-        color_prompt=yes
+        COLOR_PROMPT=yes
     else
-        color_prompt=
+        COLOR_PROMPT=
     fi
 fi
-
 
 # git configuration
 # for __git_ps1
@@ -38,7 +40,7 @@ if [ -s "$HOME/.git-prompt.sh" ]; then
    GIT_PS1_SHOWUPSTREAM=yes
 
    # Append __git_ps1 to show git status
-   if [ "$color_prompt" = yes ]; then
+   if [ "$COLOR_PROMPT" = yes ]; then
       PS1=$PS1'$(__git_ps1 "\[\033[00m\]:\[\033[1;33m\]%s")'
    else
       PS1=$PS1'$(__git_ps1 ":%s")'
@@ -48,20 +50,53 @@ fi
 [[ -s "$HOME/.git-completion.sh" ]] && source "$HOME/.git-completion.sh"
 
 [[ -s "$HOME/.aliases" ]] && source "$HOME/.aliases"
-
+[[ -s "$HOME/.functions" ]] && source "$HOME/.functions"
 
 # Set flags for development
+
 export ARCHFLAGS="-arch x86_64"
 export CFLAGS="-Qunused-arguments"
 export CPPFLAGS="-Qunused-arguments"
 
 export ES_HEAP_SIZE="4096m"
+
+export ANDROID_HOME="$HOME/Development/android-sdk-macosx"
+export DEPOT_TOOLS="$HOME/local/depot_tools"
+
+export GOPATH="$HOME/Development/go"
+export GOROOT="/usr/local/go"
+
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0.jdk/Contents/Home"
+export JAVA_LIBS="$HOME/local/lib/java"
+export JAVA_OPTS="-Xmx1024m"
+
+export JAVACC_HOME="$JAVA_LIBS/javacc-5.0"
+
+export RCX_PORT="usb"
+export RVM_HOME="$HOME/.rvm"
+
 export SBT_OPS="-XX:MaxPermSize=2048m -XX:+CMSClassUnloadingEnabled"
 
-
-# ruby stuff
-if [ -d $HOME/.rvm ]; then
-	export PATH="$PATH:$HOME/.rvm/bin"
+# if on OS X, some paths are set by path_helper from /etc/paths and /etc/paths.d
+if [ "$OSTYPE" == "darwin"* ]; then
+    eval `/usr/libexec/path_helper`
 fi
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+prefix_path_if_exists()
+{
+    NEW_PART=$1
+    if [ -d "$NEW_PART" ]; then
+        export PATH="$NEW_PART:$PATH"
+    fi
+}
+
+prefix_path_if_exists "$ANDROID_HOME/tools"
+prefix_path_if_exists "$ANDROID_HOME/platform-tools"
+prefix_path_if_exists "$DEPOT_TOOLS"
+prefix_path_if_exists "$JAVA_HOME/bin"
+prefix_path_if_exists "$JAVACC_HOME/bin"
+prefix_path_if_exists "$RVM_HOME/bin"
+
+[[ -s "$RVM_HOME/scripts/rvm" ]] && source "$RVM_HOME/scripts/rvm"
+
+export PS1="[\!] \u@\h:\w\$ "
