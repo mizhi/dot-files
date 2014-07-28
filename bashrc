@@ -68,14 +68,13 @@ export GOROOT="/usr/local/go"
 
 export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0.jdk/Contents/Home"
 export JAVA_LIBS="$HOME/local/lib/java"
-export JAVA_OPTS="-Xmx1024m"
 
 export JAVACC_HOME="$JAVA_LIBS/javacc-5.0"
 
 export RCX_PORT="usb"
 export RVM_HOME="$HOME/.rvm"
 
-export SBT_OPS="-XX:MaxPermSize=2048m -XX:+CMSClassUnloadingEnabled"
+export SBT_OPS="-Xmx2048m -XX:MaxPermSize=2048m -XX:+CMSClassUnloadingEnabled"
 
 # if on OS X, some paths are set by path_helper from /etc/paths and /etc/paths.d
 if [ "$OSTYPE" == "darwin"* ]; then
