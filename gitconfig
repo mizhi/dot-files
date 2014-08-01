@@ -6,7 +6,8 @@
 	name = Mitchell Peabody
 
 [alias]
-	dfw = diff --ignore-space-change
+	dfw = "diff --ignore-space-change"
+    cc = "!f() { echo \"Number of commits from $1 to HEAD: \"; git log $1..HEAD --pretty=oneline | wc -l; }; f"
 
 [filter "media"]
 	clean = git-media-clean %f
