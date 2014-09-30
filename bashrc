@@ -51,6 +51,7 @@ fi
 
 [[ -s "$HOME/.aliases" ]] && source "$HOME/.aliases"
 [[ -s "$HOME/.functions" ]] && source "$HOME/.functions"
+[[ -s "$HOME/.local-aliases" ]] && source "$HOME/.local-aliases"
 
 # Set flags for development
 
