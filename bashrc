@@ -43,7 +43,7 @@ if [ -s "$HOME/.git-prompt.sh" ]; then
 
    # Append __git_ps1 to show git status
    if [ "$COLOR_PROMPT" = yes ]; then
-      PS1=$PS1' [$(__git_ps1 "\[\[\033[0;33m\]%s\[\033[0;40m\]")]$ '
+      PS1=$PS1' [$(__git_ps1 "\[\033[0;33m\]%s\[\033[0m\]")]$ '
    else
       PS1=$PS1'[$(__git_ps1 "%s")]$ '
    fi
