@@ -10,7 +10,8 @@
     cc = "!f() { echo \"Number of commits [$1 to HEAD]: \"; git log $1..HEAD --pretty=oneline | expr `wc -l` + 1; }; f"
 
 [filter "media"]
-	clean = git-media-clean %f
-	smudge = git-media-smudge %f
+	required = true
+	clean = git media clean %f
+	smudge = git media smudge %f
 [core]
 	editor = vim

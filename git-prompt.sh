@@ -288,4 +288,3 @@ __git_ps1 ()
 		printf -- "${1:- (%s)}" "$c${b##refs/heads/}${f:+ $f}$r$p"
 	fi
 }
-

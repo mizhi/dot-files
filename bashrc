@@ -25,6 +25,8 @@ if [ -n "$FORCE_COLOR_PROMPT" ]; then
     fi
 fi
 
+export PS1="\033[0m[\!] \u@\h:\w"
+
 # git configuration
 # for __git_ps1
 if [ -s "$HOME/.git-prompt.sh" ]; then
@@ -41,9 +43,9 @@ if [ -s "$HOME/.git-prompt.sh" ]; then
 
    # Append __git_ps1 to show git status
    if [ "$COLOR_PROMPT" = yes ]; then
-      PS1=$PS1'$(__git_ps1 "\[\033[00m\]:\[\033[1;33m\]%s")'
+      PS1=$PS1' [$(__git_ps1 "\[\[\033[0;33m\]%s\[\033[0;40m\]")]$ '
    else
-      PS1=$PS1'$(__git_ps1 ":%s")'
+      PS1=$PS1'[$(__git_ps1 "%s")]$ '
    fi
 fi
 
@@ -98,5 +100,3 @@ prefix_path_if_exists "$JAVACC_HOME/bin"
 prefix_path_if_exists "$RVM_HOME/bin"
 
 [[ -s "$RVM_HOME/scripts/rvm" ]] && source "$RVM_HOME/scripts/rvm"
-
-export PS1="[\!] \u@\h:\w\$ "
