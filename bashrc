@@ -74,7 +74,9 @@ export DEPOT_TOOLS="$HOME/local/depot_tools"
 #export GOPATH="$HOME/Development/go"
 #export GOROOT="/usr/local/go"
 
-export JAVA_HOME="/usr/lib/jvm/default-java"
+#export JAVA_HOME="/usr/lib/jvm/default-java"
+#export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0.jdk/Contents/Home"
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.7.0_67.jdk/Contents/Home"
 export JAVA_LIBS="$HOME/local/lib/java"
 
 export RCX_PORT="usb"
