@@ -98,6 +98,7 @@ prefix_path_if_exists()
 }
 
 prefix_path_if_exists "$ANDROID_STUDIO/bin"
+prefix_path_if_exists "/usr/local/sbin"
 prefix_path_if_exists "$ANDROID_HOME/tools"
 prefix_path_if_exists "$ANDROID_HOME/platform-tools"
 prefix_path_if_exists "$DEPOT_TOOLS"
