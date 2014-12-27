@@ -1,0 +1,52 @@
+# fg colors
+black="$(tput setaf 0)"
+red="$(tput setaf 1)"
+green="$(tput setaf 2)"
+brown="$(tput setaf 3)"
+blue="$(tput setaf 4)"
+magenta="$(tput setaf 5)"
+cyan="$(tput setaf 6)"
+grey="$(tput setaf 7)"
+
+darkgrey="$(tput bold ; tput setaf 0)"
+lightred="$(tput bold ; tput setaf 1)"
+lightgreen="$(tput bold ; tput setaf 2)"
+yellow="$(tput bold ; tput setaf 3)"
+lightblue="$(tput bold ; tput setaf 4)"
+pink="$(tput bold ; tput setaf 5)"
+lightcyan="$(tput bold ; tput setaf 6)"
+white="$(tput bold ; tput setaf 7)"
+
+# bg colors
+blackbg="$(tput setab 0)"
+lightgreybg="$(tput setab 7)"
+redbg="$(tput setab 1)"
+greenbg="$(tput setab 2)"
+brownbg="$(tput setab 3)"
+bluebg="$(tput setab 4)"
+purplebg="$(tput setab 5)"
+cyanbg="$(tput setab 6)"
+default="$(tput op)"
+
+clear="$(tput sgr0)"
+
+alt=$(tput smcup || tput ti) # Start alt display
+ealt=$(tput rmcup || tput te) # End   alt display
+blink=$(tput blink || tput mb) # Start blinking
+italic=$(tput sitm) # Start italic
+eitalic=$(tput ritm) # End   italic
+bold=$(tput bold || tput md) # Start bold
+stout=$(tput smso || tput so) # Start stand-out
+estout=$(tput rmso || tput se) # End stand-out
+under=$(tput smul || tput us) # Start underline
+eunder=$(tput rmul || tput ue) # End   underline
+
+hide=$(tput civis || tput vi) # Hide cursor
+show=$(tput cnorm || tput ve) # Show cursor
+save=$(tput sc) # Save cursor
+load=$(tput rc) # Load cursor
+
+eed=$(tput ed || tput cd)   # Erase to end of display
+eel=$(tput el || tput ce)   # Erase to end of line
+ebl=$(tput el1 || tput cb)   # Erase to beginning of line
+ewl=$eel$ebl                                # Erase whole line

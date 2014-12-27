@@ -1,7 +1,13 @@
+[[ -s "$HOME/.termfunc" ]] && source "$HOME/.termfunc"
+
 umask 002
 
+# reset terminal
 export CLICOLOR=1
 export TERM=xterm-256color
+tput init
+
+export PS1="\[$clear\][\[$cyan\]\!\[$clear\]] \u\[$lightblue\]@\[$clear\]\h:\w\\[$clear\]"
 
 # pick the best installed editor
 EDITOR_PREFS=(emacs vim vi nano pico ed)
@@ -25,8 +31,6 @@ if [ -n "$FORCE_COLOR_PROMPT" ]; then
     fi
 fi
 
-export PS1="\033[0m[\!] \u@\h:\w"
-
 # git configuration
 # for __git_ps1
 if [ -s "$HOME/.git-prompt.sh" ]; then
@@ -43,7 +47,7 @@ if [ -s "$HOME/.git-prompt.sh" ]; then
 
    # Append __git_ps1 to show git status
    if [ "$COLOR_PROMPT" = yes ]; then
-      PS1=$PS1' [$(__git_ps1 "\[\033[0;33m\]%s\[\033[0m\]")]$ '
+      PS1=$PS1' [$(__git_ps1 "\[$brown\]%s\[$clear\]")]\[$lightblue\]\$\[$clear\] '
    else
       PS1=$PS1'[$(__git_ps1 "%s")]$ '
    fi
@@ -69,10 +73,8 @@ export DEPOT_TOOLS="$HOME/local/depot_tools"
 export GOPATH="$HOME/Development/go"
 export GOROOT="/usr/local/go"
 
-export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0.jdk/Contents/Home"
+export JAVA_HOME="/usr/lib/jvm/default-java"
 export JAVA_LIBS="$HOME/local/lib/java"
-
-export JAVACC_HOME="$JAVA_LIBS/javacc-5.0"
 
 export RCX_PORT="usb"
 export RVM_HOME="$HOME/.rvm"
