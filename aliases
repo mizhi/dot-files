@@ -1,2 +1,5 @@
 # useful aliases
-alias ls="ls --color=auto $*"
+
+if [[ `uname` == 'Linux' ]]; then
+	alias ls='ls --color=auto $*'
+fi
