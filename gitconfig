@@ -7,7 +7,8 @@
 
 [alias]
 	dfw = "diff --ignore-space-change"
-    cc = "!f() { echo \"Number of commits [$1 to HEAD]: \"; git log $1..HEAD --pretty=oneline | expr `wc -l` + 1; }; f"
+    	cc = "!f() { echo \"Number of commits [$1 to HEAD]: \"; git log $1..HEAD --pretty=oneline | expr `wc -l` + 1; }; f"
+	au = "ls-files --others --exclude-standard"
 
 [filter "media"]
 	required = true
@@ -15,3 +16,12 @@
 	smudge = git media smudge %f
 [core]
 	editor = vim
+[color]
+	ui = true
+
+[url "git@github.com:"]
+insteadOf = https://github.com/
+[filter "hawser"]
+	clean = git hawser clean %f
+	smudge = git hawser smudge %f
+	required = true

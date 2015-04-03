@@ -71,7 +71,6 @@ export ANDROID_HOME="$HOME/Development/android-sdk-macosx"
 export DEPOT_TOOLS="$HOME/local/depot_tools"
 
 export GOPATH="$HOME/Development/go"
-export GOROOT="/usr/local/go"
 
 export JAVA_HOME="/usr/lib/jvm/default-java"
 export JAVA_LIBS="$HOME/local/lib/java"
@@ -100,5 +99,8 @@ prefix_path_if_exists "$DEPOT_TOOLS"
 prefix_path_if_exists "$JAVA_HOME/bin"
 prefix_path_if_exists "$JAVACC_HOME/bin"
 prefix_path_if_exists "$RVM_HOME/bin"
+prefix_path_if_exists "$GOPATH/bin"
 
 [[ -s "$RVM_HOME/scripts/rvm" ]] && source "$RVM_HOME/scripts/rvm"
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
