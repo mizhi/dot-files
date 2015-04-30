@@ -5,3 +5,14 @@ function workon () {
         source ~/Development/python/virtualenvs/$1/bin/activate ;
     fi
 }
+
+function guiemacs () {
+         exec open -a /usr/local/Cellar/emacs/HEAD/Emacs.app $@
+}
+
+function em () {
+         for file in $@; do
+             emacsclient --alternate-editor guiemacs -n $file
+         done
+}
+
