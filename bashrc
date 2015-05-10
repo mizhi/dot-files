@@ -67,10 +67,12 @@ export CPPFLAGS="-Qunused-arguments"
 
 export ES_HEAP_SIZE="4096m"
 
-export ANDROID_HOME="$HOME/Development/android-sdk-macosx"
+export ANDROID_STUDIO="$HOME/Development/android/studio"
+export ANDROID_HOME="$HOME/Development/android/sdk"
 export DEPOT_TOOLS="$HOME/local/depot_tools"
 
-export GOPATH="$HOME/Development/go"
+#export GOPATH="$HOME/Development/go"
+#export GOROOT="/usr/local/go"
 
 export JAVA_HOME="/usr/lib/jvm/default-java"
 export JAVA_LIBS="$HOME/local/lib/java"
@@ -93,6 +95,7 @@ prefix_path_if_exists()
     fi
 }
 
+prefix_path_if_exists "$ANDROID_STUDIO/bin"
 prefix_path_if_exists "$ANDROID_HOME/tools"
 prefix_path_if_exists "$ANDROID_HOME/platform-tools"
 prefix_path_if_exists "$DEPOT_TOOLS"
