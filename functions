@@ -6,13 +6,21 @@ function workon () {
     fi
 }
 
+case $OSTYPE in
+    darwin*) ALT_EMACS=guiemacs
+        ;;
+    linux*) ALT_EMACS=
+        ;;
+esac
+
 function guiemacs () {
-         exec open -a /usr/local/Cellar/emacs/HEAD/Emacs.app $@
+    exec open -a /usr/local/Cellar/emacs/HEAD/Emacs.app $@
 }
 
 function em () {
-         for file in $@; do
-             emacsclient --alternate-editor guiemacs -n $file
-         done
+    emacsclient -a "$ALT_EMACS" -n $@
 }
 
+function emnw() {
+    emacsclient -a "$ALT_EMACS" -nw $@
+}
