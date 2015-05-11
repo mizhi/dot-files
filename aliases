@@ -1,5 +1,10 @@
 # useful aliases
 
-if [[ `uname` == 'Linux' ]]; then
-	alias ls='ls --color=auto $*'
-fi
+case $OSTYPE in
+    darwin*)
+        alias ls='ls --color=auto $*'
+        ;;
+    linux*)
+        alias ls='ls -G $*'
+        ;;
+esac
