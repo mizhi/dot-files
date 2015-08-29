@@ -62,8 +62,6 @@ fi
 # Set flags for development
 
 export ARCHFLAGS="-arch x86_64"
-export CFLAGS="-Qunused-arguments"
-export CPPFLAGS="-Qunused-arguments"
 
 export ES_HEAP_SIZE="4096m"
 
