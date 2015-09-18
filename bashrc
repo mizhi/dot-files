@@ -69,6 +69,7 @@ export ANDROID_STUDIO="$HOME/Development/android/studio"
 export ANDROID_HOME="$HOME/Development/android/sdk"
 export DEPOT_TOOLS="$HOME/local/depot_tools"
 
+export EMACS_HOME="/opt/emacs"
 #export GOPATH="$HOME/Development/go"
 #export GOROOT="/usr/local/go"
 
@@ -81,6 +82,7 @@ export RCX_PORT="usb"
 export RVM_HOME="$HOME/.rvm"
 
 export SBT_OPS="-Xmx2048m -XX:MaxPermSize=2048m -XX:+CMSClassUnloadingEnabled"
+export SCALA_HOME="/opt/scala/current"
 
 # if on OS X, some paths are set by path_helper from /etc/paths and /etc/paths.d
 if [ "$OSTYPE" == "darwin"* ]; then
@@ -104,6 +106,8 @@ prefix_path_if_exists "$JAVA_HOME/bin"
 prefix_path_if_exists "$JAVACC_HOME/bin"
 prefix_path_if_exists "$RVM_HOME/bin"
 prefix_path_if_exists "$GOPATH/bin"
+prefix_path_if_exists "$EMACS_HOME/bin"
+prefix_path_if_exists "$SCALA_HOME/bin"
 
 [[ -s "$RVM_HOME/scripts/rvm" ]] && source "$RVM_HOME/scripts/rvm"
 
