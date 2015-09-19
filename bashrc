@@ -65,9 +65,11 @@ export ARCHFLAGS="-arch x86_64"
 
 export ES_HEAP_SIZE="4096m"
 
+export USER_LOCAL_HOME="$HOME/local"
+
 export ANDROID_STUDIO="$HOME/Development/android/studio"
 export ANDROID_HOME="$HOME/Development/android/sdk"
-export DEPOT_TOOLS="$HOME/local/depot_tools"
+export DEPOT_TOOLS="$USER_LOCAL_HOME/depot_tools"
 
 export EMACS_HOME="/opt/emacs"
 #export GOPATH="$HOME/Development/go"
@@ -76,7 +78,7 @@ export EMACS_HOME="/opt/emacs"
 #export JAVA_HOME="/usr/lib/jvm/default-java"
 #export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0.jdk/Contents/Home"
 export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.7.0_67.jdk/Contents/Home"
-export JAVA_LIBS="$HOME/local/lib/java"
+export JAVA_LIBS="$USER_LOCAL_HOME/lib/java"
 
 export RCX_PORT="usb"
 export RVM_HOME="$HOME/.rvm"
@@ -99,6 +101,7 @@ prefix_path_if_exists()
 
 prefix_path_if_exists "$ANDROID_STUDIO/bin"
 prefix_path_if_exists "/usr/local/sbin"
+prefix_path_if_exists "$USER_LOCAL_HOME/bin"
 prefix_path_if_exists "$ANDROID_HOME/tools"
 prefix_path_if_exists "$ANDROID_HOME/platform-tools"
 prefix_path_if_exists "$DEPOT_TOOLS"
