@@ -30,23 +30,10 @@ default="$(tput op)"
 
 clear="$(tput sgr0)"
 
-alt=$(tput smcup || tput ti) # Start alt display
-ealt=$(tput rmcup || tput te) # End   alt display
-blink=$(tput blink || tput mb) # Start blinking
 italic=$(tput sitm) # Start italic
 eitalic=$(tput ritm) # End   italic
-bold=$(tput bold || tput md) # Start bold
-stout=$(tput smso || tput so) # Start stand-out
-estout=$(tput rmso || tput se) # End stand-out
-under=$(tput smul || tput us) # Start underline
-eunder=$(tput rmul || tput ue) # End   underline
 
-hide=$(tput civis || tput vi) # Hide cursor
-show=$(tput cnorm || tput ve) # Show cursor
 save=$(tput sc) # Save cursor
 load=$(tput rc) # Load cursor
 
-eed=$(tput ed || tput cd)   # Erase to end of display
-eel=$(tput el || tput ce)   # Erase to end of line
-ebl=$(tput el1 || tput cb)   # Erase to beginning of line
 ewl=$eel$ebl                                # Erase whole line
