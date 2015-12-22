@@ -1,12 +1,2 @@
 # useful aliases
-
 alias ls='ls -G $*'
-
-# case $OSTYPE in
-#     darwin*)
-#         alias ls='ls --color=auto $*'
-#         ;;
-#     linux*)
-#         alias ls='ls -G $*'
-#         ;;
-# esac
