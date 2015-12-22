@@ -60,17 +60,14 @@ fi
 [[ -s "$HOME/.local-aliases" ]] && source "$HOME/.local-aliases"
 
 # Set flags for development
-
 export ARCHFLAGS="-arch x86_64"
-
 export ES_HEAP_SIZE="4096m"
 
+# paths
 export USER_LOCAL_HOME="$HOME/local"
-
 export ANDROID_STUDIO="$HOME/Development/android/studio"
 export ANDROID_HOME="$HOME/Development/android/sdk"
 export DEPOT_TOOLS="$USER_LOCAL_HOME/depot_tools"
-
 export EMACS_HOME="/opt/emacs"
 #export GOPATH="$HOME/Development/go"
 #export GOROOT="/usr/local/go"
@@ -85,19 +82,12 @@ export RVM_HOME="$HOME/.rvm"
 
 export SBT_OPS="-Xmx2048m -XX:MaxPermSize=2048m -XX:+CMSClassUnloadingEnabled"
 export SCALA_HOME="/opt/scala/current"
+export IDEA_PATH="/opt/idea-ic"
 
 # if on OS X, some paths are set by path_helper from /etc/paths and /etc/paths.d
 if [ "$OSTYPE" == "darwin"* ]; then
     eval `/usr/libexec/path_helper`
 fi
-
-prefix_path_if_exists()
-{
-    NEW_PART=$1
-    if [ -d "$NEW_PART" ]; then
-        export PATH="$NEW_PART:$PATH"
-    fi
-}
 
 prefix_path_if_exists "$ANDROID_STUDIO/bin"
 prefix_path_if_exists "/usr/local/sbin"
@@ -111,7 +101,11 @@ prefix_path_if_exists "$RVM_HOME/bin"
 prefix_path_if_exists "$GOPATH/bin"
 prefix_path_if_exists "$EMACS_HOME/bin"
 prefix_path_if_exists "$SCALA_HOME/bin"
+prefix_path_if_exists "$IDEA_PATH/bin"
 
 [[ -s "$RVM_HOME/scripts/rvm" ]] && source "$RVM_HOME/scripts/rvm"
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+# settings to keep IntelliJ working. https://youtrack.jetbrains.com/issue/IDEA-78860
+export IBUS_ENABLE_SYNC_MODE=1

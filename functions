@@ -24,3 +24,12 @@ function em () {
 function emnw() {
     emacsclient -a "$ALT_EMACS" -nw $@
 }
+
+
+prefix_path_if_exists()
+{
+    NEW_PART=$1
+    if [ -d "$NEW_PART" ]; then
+        export PATH="$NEW_PART:$PATH"
+    fi
+}
