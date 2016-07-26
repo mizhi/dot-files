@@ -58,6 +58,7 @@ fi
 [[ -s "$HOME/.aliases" ]] && source "$HOME/.aliases"
 [[ -s "$HOME/.functions" ]] && source "$HOME/.functions"
 [[ -s "$HOME/.local-aliases" ]] && source "$HOME/.local-aliases"
+[[ -s "$HOME/.local-settings" ]] && source "$HOME/.local-settings"
 
 # Set flags for development
 export ARCHFLAGS="-arch x86_64"
