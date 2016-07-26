@@ -2,31 +2,16 @@
 	default = simple
 
 [user]
-	email = mizhi@cognius.com
-	name = Mitchell Peabody
+	email = mpeabody@panoramaed.com
+	name = Mitch Peabody
 
 [alias]
 	dfw = "diff --ignore-space-change"
     	cc = "!f() { echo \"Number of commits [$1 to HEAD]: \"; git log $1..HEAD --pretty=oneline | expr `wc -l` + 1; }; f"
 	au = "ls-files --others --exclude-standard"
 
-[filter "media"]
-	required = true
-	clean = git media clean %f
-	smudge = git media smudge %f
 [core]
-	editor = vim
-    excludesfile = ~/.gitignore
+	editor = emacs -nw --no-init
+    	excludesfile = ~/.gitignore
 [color]
 	ui = true
-
-[url "git@github.com:"]
-insteadOf = https://github.com/
-[filter "hawser"]
-	clean = git hawser clean %f
-	smudge = git hawser smudge %f
-	required = true
-[filter "lfs"]
-	clean = git-lfs clean %f
-	smudge = git-lfs smudge %f
-	required = true
