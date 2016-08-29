@@ -16,3 +16,6 @@ TAGS
 # ruby stuff
 vendor/ruby
 vendor/bundle
+
+# python
+venv/
