@@ -79,7 +79,7 @@ export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.7.0_67.jdk/Contents/Hom
 export JAVA_LIBS="$USER_LOCAL_HOME/lib/java"
 
 export RCX_PORT="usb"
-export RVM_HOME="$HOME/.rvm"
+export CHRUBY_HOME="/usr/local/opt/chruby"
 
 export SBT_OPS="-Xmx2048m -XX:MaxPermSize=2048m -XX:+CMSClassUnloadingEnabled"
 export SCALA_HOME="/opt/scala/current"
@@ -98,15 +98,13 @@ prefix_path_if_exists "$ANDROID_HOME/platform-tools"
 prefix_path_if_exists "$DEPOT_TOOLS"
 prefix_path_if_exists "$JAVA_HOME/bin"
 prefix_path_if_exists "$JAVACC_HOME/bin"
-prefix_path_if_exists "$RVM_HOME/bin"
 prefix_path_if_exists "$GOPATH/bin"
 prefix_path_if_exists "$EMACS_HOME/bin"
 prefix_path_if_exists "$SCALA_HOME/bin"
 prefix_path_if_exists "$IDEA_PATH/bin"
 
-[[ -s "$RVM_HOME/scripts/rvm" ]] && source "$RVM_HOME/scripts/rvm"
-
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+[[ -s "$CHRUBY_HOME/share/chruby/chruby.sh" ]] && source "$CHRUBY_HOME/share/chruby/chruby.sh"
+[[ -s "$CHRUBY_HOME/share/chruby/auto.sh" ]] && source "$CHRUBY_HOME/share/chruby/auto.sh"
 
 # settings to keep IntelliJ working. https://youtrack.jetbrains.com/issue/IDEA-78860
 export IBUS_ENABLE_SYNC_MODE=1

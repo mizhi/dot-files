@@ -8,3 +8,11 @@ TAGS
 .projectile
 
 .idea/
+
+# floo stuff
+.floo
+.flooignore
+
+# ruby stuff
+vendor/ruby
+vendor/bundle
