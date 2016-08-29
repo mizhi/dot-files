@@ -7,11 +7,24 @@
 
 [alias]
 	dfw = "diff --ignore-space-change"
-    	cc = "!f() { echo \"Number of commits [$1 to HEAD]: \"; git log $1..HEAD --pretty=oneline | expr `wc -l` + 1; }; f"
+    cc = "!f() { echo \"Number of commits [$1 to HEAD]: \"; git log $1..HEAD --pretty=oneline | expr `wc -l` + 1; }; f"    
 	au = "ls-files --others --exclude-standard"
+
+    co = checkout
+    cod = checkout develop
+    frb = !git fetch && git rebase
 
 [core]
 	editor = emacs -nw --no-init
-    	excludesfile = ~/.gitignore
+	excludesfile = /Users/mizhi/.gitignore
 [color]
 	ui = true
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true
