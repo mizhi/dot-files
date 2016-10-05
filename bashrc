@@ -69,13 +69,9 @@ export USER_LOCAL_HOME="$HOME/local"
 export ANDROID_STUDIO="$HOME/Development/android/studio"
 export ANDROID_HOME="$HOME/Development/android/sdk"
 export DEPOT_TOOLS="$USER_LOCAL_HOME/depot_tools"
-export EMACS_HOME="/opt/emacs"
-#export GOPATH="$HOME/Development/go"
-#export GOROOT="/usr/local/go"
+export EMACS_HOME="/opt/emacs-git"
 
-#export JAVA_HOME="/usr/lib/jvm/default-java"
-#export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0.jdk/Contents/Home"
-export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.7.0_67.jdk/Contents/Home"
+export JAVA_HOME="/usr/lib/jvm/java-8-oracle"
 export JAVA_LIBS="$USER_LOCAL_HOME/lib/java"
 
 export RCX_PORT="usb"
@@ -83,7 +79,9 @@ export CHRUBY_HOME="/usr/local/opt/chruby"
 
 export SBT_OPS="-Xmx2048m -XX:MaxPermSize=2048m -XX:+CMSClassUnloadingEnabled"
 export SCALA_HOME="/opt/scala/current"
-export IDEA_PATH="/opt/idea-ic"
+export IDEA_PATH="/opt/idea-iu"
+export PYCHARM_PATH="/opt/pycharm"
+export CLION_PATH="/opt/clion"
 
 # if on OS X, some paths are set by path_helper from /etc/paths and /etc/paths.d
 if [ "$OSTYPE" == "darwin"* ]; then
@@ -102,6 +100,8 @@ prefix_path_if_exists "$GOPATH/bin"
 prefix_path_if_exists "$EMACS_HOME/bin"
 prefix_path_if_exists "$SCALA_HOME/bin"
 prefix_path_if_exists "$IDEA_PATH/bin"
+prefix_path_if_exists "$PYCHARM_PATH/bin"
+prefix_path_if_exists "$CLION_PATH/bin"
 
 [[ -s "$CHRUBY_HOME/share/chruby/chruby.sh" ]] && source "$CHRUBY_HOME/share/chruby/chruby.sh"
 [[ -s "$CHRUBY_HOME/share/chruby/auto.sh" ]] && source "$CHRUBY_HOME/share/chruby/auto.sh"
