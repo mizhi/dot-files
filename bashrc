@@ -1,11 +1,11 @@
-[[ -s "$HOME/.termfunc" ]] && source "$HOME/.termfunc"
-
-umask 002
-
 # reset terminal
 export CLICOLOR=1
 export TERM=xterm-256color
 tput init
+
+[[ -s "$HOME/.termfunc" ]] && source "$HOME/.termfunc"
+
+umask 002
 
 export PS1="\[$clear\][\[$cyan\]\!\[$clear\]] \u\[$lightblue\]@\[$clear\]\h:\w\\[$clear\]"
 
