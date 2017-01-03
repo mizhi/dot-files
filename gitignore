@@ -16,6 +16,7 @@ TAGS
 # ruby stuff
 vendor/ruby
 vendor/bundle
+.yardoc/
 
 # python
 venv/
