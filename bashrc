@@ -79,9 +79,13 @@ export CHRUBY_HOME="/usr/local/opt/chruby"
 
 export SBT_OPS="-Xmx2048m -XX:MaxPermSize=2048m -XX:+CMSClassUnloadingEnabled"
 export SCALA_HOME="/opt/scala/current"
+
 export IDEA_PATH="/opt/idea-iu"
 export PYCHARM_PATH="/opt/pycharm"
 export CLION_PATH="/opt/clion"
+
+export JETBRAINS_HOME="$HOME/.local/share/JetBrains"
+export TOOLBOX_PATH="$JETBRAINS_HOME/Toolbox"
 
 # if on OS X, some paths are set by path_helper from /etc/paths and /etc/paths.d
 if [ "$OSTYPE" == "darwin"* ]; then
@@ -99,9 +103,7 @@ prefix_path_if_exists "$JAVACC_HOME/bin"
 prefix_path_if_exists "$GOPATH/bin"
 prefix_path_if_exists "$EMACS_HOME/bin"
 prefix_path_if_exists "$SCALA_HOME/bin"
-prefix_path_if_exists "$IDEA_PATH/bin"
-prefix_path_if_exists "$PYCHARM_PATH/bin"
-prefix_path_if_exists "$CLION_PATH/bin"
+prefix_path_if_exists "$TOOLBOX_PATH/bin"
 
 [[ -s "$CHRUBY_HOME/share/chruby/chruby.sh" ]] && source "$CHRUBY_HOME/share/chruby/chruby.sh"
 [[ -s "$CHRUBY_HOME/share/chruby/auto.sh" ]] && source "$CHRUBY_HOME/share/chruby/auto.sh"
