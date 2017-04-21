@@ -110,3 +110,10 @@ prefix_path_if_exists "$TOOLBOX_PATH/bin"
 
 # settings to keep IntelliJ working. https://youtrack.jetbrains.com/issue/IDEA-78860
 export IBUS_ENABLE_SYNC_MODE=1
+
+# dinghy
+# eval $(dinghy env)
+# export DOCKER_HOST=tcp://192.168.99.100:2376
+# export DOCKER_CERT_PATH=/Users/mizhi/.docker/machine/machines/dinghy
+# export DOCKER_TLS_VERIFY=1
+# export DOCKER_MACHINE_NAME=dinghy
