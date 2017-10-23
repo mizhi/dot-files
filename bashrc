@@ -111,6 +111,9 @@ prefix_path_if_exists "$TOOLBOX_PATH/bin"
 # settings to keep IntelliJ working. https://youtrack.jetbrains.com/issue/IDEA-78860
 export IBUS_ENABLE_SYNC_MODE=1
 
+# This setting is so that I can use Ctrl-Q as the prefix keys for tmux.
+stty stop undef
+
 # dinghy
 # eval $(dinghy env)
 # export DOCKER_HOST=tcp://192.168.99.100:2376
