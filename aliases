@@ -14,3 +14,6 @@ alias vact="source venv/bin/activate"
 # emacs
 alias em="emacs"
 alias emnw="emacs -nw"
+
+# heroku
+alias hk="heroku"
