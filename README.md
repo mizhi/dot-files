@@ -4,6 +4,8 @@ To Use
 $ cd <repo clone>
 $ install/bash.sh
 $ install/git.sh
+$ install/tmux.sh
+$ install/vim.sh
 ```
 
 Tmux Keyboard Shortcuts
@@ -33,3 +35,28 @@ Swapping windows
 
 `prefix + <` - moves current window one position to the left
 `prefix + >` - moves current window one position to the right
+
+VIM Keyboard Shortcuts
+======================
+
+*DWM*
+
+`C-N` - Creates a new window and place it in the master pane [M] & stacks all previous windows in the stacked pane [S]
+`C-C` - Close the current window if no unsaved changes
+`C-J` - Jumps to next window (clockwise)
+`C-K` - Jumps to previous window (anti-clockwise)
+`C-Space` - Focus the current window, that is, place it in the master pane [M] & stacks all other windows in the stacked pane [S]
+
+
+*CTRLP*
+Press <F5> to purge the cache for the current directory to get new files, remove deleted files and apply new ignore options.
+Press <c-f> and <c-b> to cycle between modes.
+Press <c-d> to switch to filename search instead of full path.
+Press <c-r> to switch to regexp mode.
+Use <c-j>, <c-k> or the arrow keys to navigate the result list.
+Use <c-t> or <c-v>, <c-x> to open the selected entry in a new tab or in a new split.
+Use <c-n>, <c-p> to select the next/previous string in the prompt's history.
+Use <c-y> to create a new file and its parent directories.
+Use <c-z> to mark/unmark multiple files and <c-o> to open them.
+
+
