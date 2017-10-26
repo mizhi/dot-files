@@ -92,8 +92,8 @@ if [ "$OSTYPE" == "darwin"* ]; then
     eval `/usr/libexec/path_helper`
 fi
 
-prefix_path_if_exists "$ANDROID_STUDIO/bin"
 prefix_path_if_exists "/usr/local/sbin"
+prefix_path_if_exists "$ANDROID_STUDIO/bin"
 prefix_path_if_exists "$USER_LOCAL_HOME/bin"
 prefix_path_if_exists "$ANDROID_HOME/tools"
 prefix_path_if_exists "$ANDROID_HOME/platform-tools"
@@ -107,6 +107,13 @@ prefix_path_if_exists "$TOOLBOX_PATH/bin"
 
 [[ -s "$CHRUBY_HOME/share/chruby/chruby.sh" ]] && source "$CHRUBY_HOME/share/chruby/chruby.sh"
 [[ -s "$CHRUBY_HOME/share/chruby/auto.sh" ]] && source "$CHRUBY_HOME/share/chruby/auto.sh"
+
+# Various tools put bash completion stuff in places
+export BASH_COMPLETION_PATH="/usr/local/etc/bash_completion.d"
+
+for f in $BASH_COMPLETION_PATH/*; do
+    [[ -s "$f" ]] && source "$f"
+done
 
 # settings to keep IntelliJ working. https://youtrack.jetbrains.com/issue/IDEA-78860
 export IBUS_ENABLE_SYNC_MODE=1

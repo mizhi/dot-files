@@ -7,6 +7,12 @@ set cursorline
 set showmatch
 set t_Co=256
 
+set backspace=indent,eol,start
+set expandtab
+set shiftwidth=2
+set softtabstop=2
+set tabstop=2
+
 " Enable folding
 set foldmethod=indent
 set foldlevel=99

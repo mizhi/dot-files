@@ -25,11 +25,20 @@ function emcnw() {
     emacsclient -a "$ALT_EMACS" -nw $@
 }
 
+function substring() {
+    HAYSTACK="$1"
+    NEEDLE="$2"
+    if [[ "${HAYSTACK#*$NEEDLE}" != "${HAYSTACK}" ]]; then
+        return 0 # NEEDLE is in HAYSTACK
+    else
+        return 1 # NEEDLE isn't in HAYSTACK
+    fi
+}
 
-prefix_path_if_exists()
-{
+function prefix_path_if_exists() {
     NEW_PART=$1
-    if [ -d "$NEW_PART" ]; then
+    if [ -d "$NEW_PART" ] && ! substring "$PATH", "$NEW_PART"; then
         export PATH="$NEW_PART:$PATH"
     fi
 }
+    
