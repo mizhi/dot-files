@@ -5,6 +5,7 @@ filetype off                  " required
 set number
 set cursorline
 set showmatch
+set t_Co=256
 
 " Enable folding
 set foldmethod=indent
