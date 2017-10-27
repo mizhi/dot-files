@@ -7,6 +7,7 @@ set cursorline
 set showmatch
 set t_Co=256
 
+" tab settings
 set backspace=indent,eol,start
 set expandtab
 set shiftwidth=2
@@ -113,4 +114,3 @@ au BufNewFile,BufRead *.py
 " Color theme
 let g:zenburn_high_Contrast=1
 colors zenburn
-

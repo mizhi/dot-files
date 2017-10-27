@@ -1,6 +1,12 @@
 #!/usr/bin/env bash
 
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+if [! -d ~/.vim ]; then
+    mkdir ~/.vim
+fi
+
+if [! -d ~/.vim/bundle/Vundle.vim ]; then
+    git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+fi
 
 ln -sf `pwd`/vimrc ~/.vimrc
 
