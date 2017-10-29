@@ -71,7 +71,12 @@ export ANDROID_HOME="$HOME/Development/android/sdk"
 export DEPOT_TOOLS="$USER_LOCAL_HOME/depot_tools"
 export EMACS_HOME="/opt/emacs-git"
 
-export JAVA_HOME=`/usr/libexec/java_home`
+if [ "$OSTYPE" == "darwin"* ]; then
+  export JAVA_HOME=`/usr/libexec/java_home`
+else
+  export JAVA_HOME="/usr/lib/jvm/java-8-oracle"
+fi
+
 export JAVA_LIBS="$USER_LOCAL_HOME/lib/java"
 
 export RCX_PORT="usb"
