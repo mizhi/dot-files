@@ -71,7 +71,7 @@ export ANDROID_HOME="$HOME/Development/android/sdk"
 export DEPOT_TOOLS="$USER_LOCAL_HOME/depot_tools"
 export EMACS_HOME="/opt/emacs-git"
 
-export JAVA_HOME="/usr/lib/jvm/java-8-oracle"
+export JAVA_HOME=`/usr/libexec/java_home`
 export JAVA_LIBS="$USER_LOCAL_HOME/lib/java"
 
 export RCX_PORT="usb"
@@ -121,9 +121,9 @@ export IBUS_ENABLE_SYNC_MODE=1
 # This setting is so that I can use Ctrl-Q as the prefix keys for tmux.
 stty stop undef
 
-# dinghy
-# eval $(dinghy env)
-# export DOCKER_HOST=tcp://192.168.99.100:2376
-# export DOCKER_CERT_PATH=/Users/mizhi/.docker/machine/machines/dinghy
-# export DOCKER_TLS_VERIFY=1
-# export DOCKER_MACHINE_NAME=dinghy
+# if on OS X, setup dinghy 
+if [ "$OSTYPE" == "darwin"* ]; then
+  eval $(dinghy env)
+fi
+
+
