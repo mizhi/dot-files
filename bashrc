@@ -18,7 +18,7 @@ export VISUAL=$EDITOR
 # bring in color definitions
 [[ -s "$HOME/.termfunc" ]] && source "$HOME/.termfunc"
 
-export PS1="\[$clear\][\[$cyan\]\!\[$clear\]] \u\[$lightblue\]@\[$clear\]\h:\w\\[$clear\]"
+export PS1="\[$clear\][\[$cyan\]\#\[$clear\]] \u\[$lightblue\]@\[$clear\]\h:\w\\[$clear\]"
 
 # shell prompt stuff
 FORCE_COLOR_PROMPT=yes
