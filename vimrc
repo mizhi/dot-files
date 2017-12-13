@@ -37,6 +37,7 @@ Plugin 'https://github.com/majutsushi/tagbar'
 Plugin 'scrooloose/syntastic'
 Plugin 'Yggdroot/indentLine'
 Plugin 'tmhedberg/SimpylFold'
+Plugin 'airblade/vim-gitgutter'
 
 " Language specific plugins
 Plugin 'elixir-editors/vim-elixir'
@@ -95,6 +96,10 @@ let g:syntastic_sass_checkers = ['sass']
 
 " tagbar settings
 nmap <F8> :TagbarToggle<CR>
+
+" CtrlP settings
+let g:ctrlp_working_path_mode = 'ra'
+
 
 " Settings for different file types
 au BufNewFile,BufRead *.js, *.html, *.css
