@@ -93,6 +93,7 @@ let g:syntastic_eruby_checkers = ['ruby']
 let g:syntastic_json_checkers = ['jsonlint']
 let g:syntastic_markdown_checkers = ['mdl']
 let g:syntastic_sass_checkers = ['sass']
+let g:syntastic_python_checkers = ['pyline']
 
 " tagbar settings
 nmap <F8> :TagbarToggle<CR>
@@ -103,17 +104,18 @@ let g:ctrlp_working_path_mode = 'ra'
 
 " Settings for different file types
 au BufNewFile,BufRead *.js, *.html, *.css
-    \ set tabstop=2
-    \ set softtabstop=2
+    \ set tabstop=2 |
+    \ set softtabstop=2 |
     \ set shiftwidth=2
 
 au BufNewFile,BufRead *.py
-    \ set tabstop=4
-    \ set softtabstop=4
-    \ set shiftwidth=4
-    \ set textwidth=79
-    \ set expandtab
-    \ set autoindent
+    \ set tabstop=4 |
+    \ set softtabstop=4 |
+    \ set shiftwidth=4 |
+    \ set textwidth=160 |
+    \ set expandtab |
+    \ set autoindent |
+    \ set wrapmargin=0 |
     \ set fileformat=unix
 
 " Color theme
