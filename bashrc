@@ -71,5 +71,3 @@ for f in $BASH_COMPLETION_PATH/*; do
     [[ -s "$f" ]] && source "$f"
 done
 
-/etc/motd.sh
-
