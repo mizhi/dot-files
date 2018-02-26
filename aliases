@@ -8,6 +8,8 @@ alias bu="b update"
 alias be="b exec"
 alias binit="bi && b package && echo 'vendor/ruby' >> .gitignore"
 
+alias tator="chruby-exec system -- tmuxinator"
+
 # python
 alias vact="source venv/bin/activate"
 

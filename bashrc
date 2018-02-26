@@ -70,4 +70,3 @@ export BASH_COMPLETION_PATH="/usr/local/etc/bash_completion.d"
 for f in $BASH_COMPLETION_PATH/*; do
     [[ -s "$f" ]] && source "$f"
 done
-
