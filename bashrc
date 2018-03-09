@@ -20,6 +20,10 @@ export VISUAL=$EDITOR
 
 export PS1="\[$clear\][\[$cyan\]\#\[$clear\]] \u\[$lightblue\]@\[$clear\]\h:\w\\[$clear\]"
 
+if [ "$SESSION_TYPE" = "remote/ssh" ]; then
+  PS1="\[$red\][remote] $PS1"
+fi
+
 # shell prompt stuff
 FORCE_COLOR_PROMPT=yes
 
@@ -70,3 +74,7 @@ export BASH_COMPLETION_PATH="/usr/local/etc/bash_completion.d"
 for f in $BASH_COMPLETION_PATH/*; do
     [[ -s "$f" ]] && source "$f"
 done
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
