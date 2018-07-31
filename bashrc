@@ -4,6 +4,7 @@ export TERM=xterm-256color
 
 tput init
 umask 002
+shopt -s extglob
 
 # This setting is so that I can use Ctrl-Q as the prefix keys for tmux.
 stty stop undef
