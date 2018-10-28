@@ -10,6 +10,8 @@
     cc = "!f() { echo \"Number of commits [$1 to HEAD]: \"; git log $1..HEAD --pretty=oneline | expr `wc -l` + 1; }; f"
 	au = "ls-files --others --exclude-standard"
 
+    prlink = "!f() { local repository=${PWD##*/}; local branch=$(git rev-parse --abbrev-ref HEAD); echo \"https://github.com/panorama-ed/${repository}/compare/${branch}?expand=1\"; }; f"
+
     co = checkout
     cod = checkout develop
     com = checkout master
@@ -31,6 +33,11 @@
 	process = git-lfs filter-process
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
+
+[status]
+	submodulesummary = true
+[submodule]
+	recurse = true
 
 [includeIf "gitdir:~/Development/panorama/"]
     path = ~/.work-gitconfig
