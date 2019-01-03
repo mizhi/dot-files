@@ -14,3 +14,7 @@ function prefix_path_if_exists() {
         export PATH="$NEW_PART:$PATH"
     fi
 }
+
+function scrub_docker() {
+    docker run --rm -v /var/run/docker.sock:/var/run/docker.sock -v /etc:/etc:ro spotify/docker-gc
+}
