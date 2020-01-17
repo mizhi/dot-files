@@ -5,6 +5,9 @@
 .[#]*
 .[#]*[#]
 TAGS
+GRTAGS
+GPATH
+GTAGS
 .projectile
 
 .idea/
@@ -17,6 +20,13 @@ TAGS
 vendor/ruby
 vendor/bundle
 .yardoc/
+.byebug_history
+
 
 # python
 venv/
+
+.vscode/
+*.code-workspace
+
+.jshintignore
