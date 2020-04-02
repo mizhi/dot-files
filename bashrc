@@ -65,8 +65,10 @@ fi
 
 [[ -s "$HOME/.aliases" ]] && source "$HOME/.aliases"
 [[ -s "$HOME/.functions" ]] && source "$HOME/.functions"
-[[ -s "$HOME/.local-aliases" ]] && source "$HOME/.local-aliases"
-[[ -s "$HOME/.local-settings" ]] && source "$HOME/.local-settings"
+
+for f in $HOME/.local-settings.d/*; do 
+  source "$f"
+done
 
 prefix_path_if_exists "/usr/local/sbin"
 
