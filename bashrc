@@ -66,9 +66,11 @@ fi
 [[ -s "$HOME/.aliases" ]] && source "$HOME/.aliases"
 [[ -s "$HOME/.functions" ]] && source "$HOME/.functions"
 
-for f in $HOME/.local-settings.d/*; do 
-  source "$f"
-done
+if [ -d $HOME/.local-settings.d ] && [ ! -z $(ls -A $HOME/.local-settings.d) ]; then
+   for f in "$HOME/.local-settings.d/*"; do
+       source "$f"
+   done
+fi
 
 prefix_path_if_exists "/usr/local/sbin"
 
@@ -78,6 +80,12 @@ for f in $BASH_COMPLETION_PATH/*; do
     [[ -s "$f" ]] && source "$f"
 done
 
+# ruby
+export CHRUBY_HOME="/usr/local"
+[[ -s "$CHRUBY_HOME/share/chruby/chruby.sh" ]] && source "$CHRUBY_HOME/share/chruby/chruby.sh"
+[[ -s "$CHRUBY_HOME/share/chruby/auto.sh" ]] && source "$CHRUBY_HOME/share/chruby/auto.sh"
+
+# node
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
