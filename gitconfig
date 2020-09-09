@@ -14,7 +14,8 @@
 
     co = checkout
     cod = checkout develop
-    com = checkout master
+    com = checkout main
+    comas = checkout master
     frb = !git fetch && git rebase
 
 [core]
@@ -38,6 +39,9 @@
 	submodulesummary = true
 [submodule]
 	recurse = true
+[init]
+	defaultBranch = main
 
 [includeIf "gitdir:~/Development/panorama/"]
     path = ~/.work-gitconfig
+
