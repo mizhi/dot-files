@@ -67,7 +67,7 @@ fi
 [[ -s "$HOME/.functions" ]] && source "$HOME/.functions"
 
 if [ -d $HOME/.local-settings.d ] && [ ! -z $(ls -A $HOME/.local-settings.d) ]; then
-   for f in "$HOME/.local-settings.d/*"; do
+   for f in $HOME/.local-settings.d/*; do
        source "$f"
    done
 fi

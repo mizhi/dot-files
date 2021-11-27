@@ -19,3 +19,4 @@ alias emnw="emacs -nw"
 
 # heroku
 alias hk="heroku"
+alias dc="docker-compose"
