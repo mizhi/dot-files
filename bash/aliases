@@ -1,5 +1,5 @@
 # useful aliases
-alias ls='ls -G $*'
+alias ls='ls -G --color $*'
 
 # ruby
 alias b="bundle"

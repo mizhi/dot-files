@@ -59,6 +59,8 @@ if [ -s "$HOME/.git-prompt.sh" ]; then
   else
     PS1=$PS1' [$(__git_ps1 "%s")]\n\$ '
   fi
+else
+  PS1=$PS1'\$ '
 fi
 
 [[ -s "$HOME/.git-completion.sh" ]] && source "$HOME/.git-completion.sh"
