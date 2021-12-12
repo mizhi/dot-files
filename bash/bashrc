@@ -19,7 +19,7 @@ export VISUAL=$EDITOR
 # bring in color definitions
 [[ -s "$HOME/.termfunc" ]] && source "$HOME/.termfunc"
 
-export PS1="\[$clear\][\[$cyan\]\#\[$clear\]] \u\[$lightblue\]@\[$clear\]\h:\w\\[$clear\]\$ "
+export PS1="\[$clear\][\[$cyan\]\#\[$clear\]] \u\[$lightblue\]@\[$clear\]\h:\w\\[$clear\]"
 
 if [ "$SESSION_TYPE" = "remote/ssh" ]; then
   PS1="\[$red\][remote] $PS1"
@@ -59,6 +59,8 @@ if [ -s "$HOME/.git-prompt.sh" ]; then
   else
     PS1=$PS1' [$(__git_ps1 "%s")]\n\$ '
   fi
+else
+  PS1=$PS1'\$ '
 fi
 
 [[ -s "$HOME/.git-completion.sh" ]] && source "$HOME/.git-completion.sh"
